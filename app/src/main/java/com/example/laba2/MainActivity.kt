@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             output*=(inputValue - i)/(inputValue - (i-1))
             i*=2
         }
-        Toast.makeText(this, output, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, output.toString(), Toast.LENGTH_SHORT).show()
 
     }
 }
