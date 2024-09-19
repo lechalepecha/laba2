@@ -26,9 +26,9 @@ class MainActivity : AppCompatActivity() {
         val myNumberField = findViewById<EditText>(R.id.textNumber)
         val inputValue = myNumberField.text.toString().toInt()
         var i = 2
-        var output = 1
+        var output = 1.0
         while (i<=128){
-            output*=(inputValue - i)/(inputValue - (i-1))
+            output*=(inputValue - i).toDouble()/(inputValue - (i-1)).toDouble()
             i*=2
         }
         Toast.makeText(this, output.toString(), Toast.LENGTH_SHORT).show()
