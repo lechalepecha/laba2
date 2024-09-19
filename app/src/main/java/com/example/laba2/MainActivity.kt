@@ -25,14 +25,13 @@ class MainActivity : AppCompatActivity() {
 
         val myNumberField = findViewById<EditText>(R.id.textNumber)
         val inputValue = myNumberField.text.toString().toInt()
-
-
-        when(inputValue){
-            1 -> Toast.makeText(this, "Зима", Toast.LENGTH_SHORT).show()
-            2 -> Toast.makeText(this, "Весна", Toast.LENGTH_SHORT).show()
-            3-> Toast.makeText(this, "Лето", Toast.LENGTH_SHORT).show()
-            4 -> Toast.makeText(this, "Осень", Toast.LENGTH_SHORT).show()
-            else -> Toast.makeText(this, "Ошибка, время года не существует", Toast.LENGTH_SHORT).show()
+        var i = 2
+        var output = 1
+        while (i<=128){
+            output*=(inputValue - i)/(inputValue - (i-1))
+            i*=2
         }
+        Toast.makeText(this, output, Toast.LENGTH_SHORT).show()
+
     }
 }
